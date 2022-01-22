@@ -11,7 +11,7 @@ import logger from 'redux-logger'
 const feelingsReducer = (state = '', action) => {
     switch (action.type) {
         case 'FEELINGS':
-            console.log('action.payload is:', action.payload)
+            console.log('feelingsReducer payload:', action.payload)
             return Number(action.payload);
     }
     return state;
@@ -21,7 +21,17 @@ const feelingsReducer = (state = '', action) => {
 const understandingReducer = (state = '', action) => {
     switch (action.type) {
         case 'UNDERSTANDING':
-            console.log('action.payload is:', action.payload)
+            console.log('understandingReducer payload:', action.payload)
+            return Number(action.payload);
+    }
+    return state;
+}
+
+// Step 3: support reducer
+const supportReducer = (state = '', action) => {
+    switch (action.type) {
+        case 'SUPPORT':
+            console.log('supportReducer payload:', action.payload)
             return Number(action.payload);
     }
     return state;
@@ -32,6 +42,7 @@ const store = createStore(
     combineReducers({
         feelingsReducer,
         understandingReducer,
+        supportReducer,
     }),
     applyMiddleware(logger)
 );

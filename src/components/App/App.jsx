@@ -17,7 +17,7 @@ function App() {
       <Route path="/understanding" exact>
         <Understanding />
       </Route>
-      <Route path="/understanding" exact>
+      <Route path="/support" exact>
         <Support />
       </Route>
       </Router>
