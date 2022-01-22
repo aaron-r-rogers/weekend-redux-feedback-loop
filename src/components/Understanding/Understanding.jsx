@@ -11,7 +11,7 @@ function Understanding () {
     const [understandingInput, setUnderstandingInput] = useState('');
 
     const onClickNext = (evt) => {
-        evt.preventDefault();
+        
         // send state to store
         console.log('understanding input is:', understandingInput)
         dispatch({

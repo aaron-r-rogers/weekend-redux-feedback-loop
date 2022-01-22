@@ -11,7 +11,7 @@ function Feelings () {
     const [feelingsInput, setFeelingsInput] = useState('');
 
     const onClickNext = (evt) => {
-        evt.preventDefault();
+        
         // send state to store
         console.log('feelings input is:', feelingsInput)
         dispatch({

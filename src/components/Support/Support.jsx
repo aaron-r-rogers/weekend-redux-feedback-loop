@@ -11,7 +11,7 @@ function Support () {
     const [supportInput, setSupportInput] = useState('');
 
     const onClickNext = (evt) => {
-        evt.preventDefault();
+        
         // send state to store
         console.log('support input is:', supportInput)
         dispatch({

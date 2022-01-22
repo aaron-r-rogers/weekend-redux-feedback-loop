@@ -11,7 +11,7 @@ function Comments () {
     const [commentsInput, setCommentsInput] = useState('');
 
     const onClickNext = (evt) => {
-        evt.preventDefault();
+        
         // send state to store
         console.log('comments input is:', commentsInput)
         dispatch({
