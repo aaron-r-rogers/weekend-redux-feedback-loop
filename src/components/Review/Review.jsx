@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 function Review () {
 
@@ -16,6 +17,7 @@ function Review () {
 
     const onSubmit = () => {
 
+        // sends state to database as new row
         axios.post('/review', {
             feeling: feelings,
             understanding: understanding,
@@ -29,6 +31,7 @@ function Review () {
         })
     }
 
+    // empties all state from store
     const reset = () => {
         dispatch({
             type: 'RESET'
@@ -38,6 +41,7 @@ function Review () {
     return (
     <>
     <Header />
+    <Box sx={{ m: 4 }}>
     <Typography variant="h5">Review Your Feedback</Typography>
         <Typography variant="h6">Feelings: 
             <Typography variant="body1">{feelings}</Typography>
@@ -51,6 +55,7 @@ function Review () {
         <Typography variant="h6">Comments: 
             <Typography variant="body1">{comments}</Typography>
         </Typography>
+        </Box>
 
         <Link to="/comments" style={{ textDecoration: 'none' }}>
             <Button variant="contained" color="secondary">

@@ -8,6 +8,7 @@ function Confirmation () {
 
     const dispatch = useDispatch();
 
+    // empties all state from store
     const reset = () => {
         dispatch({
             type: 'RESET'
