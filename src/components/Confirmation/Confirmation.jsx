@@ -1,11 +1,14 @@
 import Header from '../Header/Header';
 import { useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
 function Confirmation () {
 
     const dispatch = useDispatch();
 
+    // empties all state from store
     const reset = () => {
         dispatch({
             type: 'RESET'
@@ -13,16 +16,18 @@ function Confirmation () {
     }
 
     return (
-    <>
-    <Header />
-    <h3>Submission success. We appreciate your feedback!</h3>
+        <>
+        <Header />
+        <Typography variant="h4" gutterBottom={true}>
+            Submission success. We appreciate your feedback!
+        </Typography>
 
-        <Link to="/">
-            <button onClick={reset}>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+            <Button variant="contained" onClick={reset}>
                 Take a new survey.
-            </button>
+            </Button>
         </Link>
-    </>
+        </>
     )
 }
 

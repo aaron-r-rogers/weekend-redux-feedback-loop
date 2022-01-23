@@ -2,6 +2,9 @@ import Header from '../Header/Header';
 import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 function Review () {
 
@@ -14,6 +17,7 @@ function Review () {
 
     const onSubmit = () => {
 
+        // sends state to database as new row
         axios.post('/review', {
             feeling: feelings,
             understanding: understanding,
@@ -27,6 +31,7 @@ function Review () {
         })
     }
 
+    // empties all state from store
     const reset = () => {
         dispatch({
             type: 'RESET'
@@ -36,25 +41,40 @@ function Review () {
     return (
     <>
     <Header />
-    <h2>Review Your Feedback</h2>
-        <h4>Feelings: {feelings}</h4>
-        <h4>Understanding: {understanding}</h4>
-        <h4>Support: {support}</h4>
-        <h4>Comments: {comments}</h4>
-        <Link to="/confirmation">
-            <button onClick={onSubmit}>
+    <Box sx={{ m: 4 }}>
+    <Typography variant="h5">Review Your Feedback</Typography>
+        <Typography variant="h6">Feelings: 
+            <Typography variant="body1">{feelings}</Typography>
+        </Typography>
+        <Typography variant="h6">Understanding: 
+            <Typography variant="body1">{understanding}</Typography>
+        </Typography>
+        <Typography variant="h6">Support: 
+            <Typography variant="body1">{support}</Typography>
+        </Typography>
+        <Typography variant="h6">Comments: 
+            <Typography variant="body1">{comments}</Typography>
+        </Typography>
+        </Box>
+
+        <Link to="/comments" style={{ textDecoration: 'none' }}>
+            <Button variant="contained" color="secondary">
+            BACK: Comments
+            </Button>
+        </Link>
+        <Link to="/confirmation" style={{ textDecoration: 'none' }}>
+            <Button variant="contained" onClick={onSubmit}>
                 SUBMIT
-            </button>
+            </Button>
         </Link>
-        <Link to="/comments">
-            <button>
-                BACK: Comments
-            </button>
-        </Link>
-        <Link to="/">
-            <button onClick={reset}>
+        <br></br>
+        <Link to="/comments" style={{ textDecoration: 'none' }}>
+            <Button 
+            variant="contained" 
+            color="warning"
+            onClick={reset}>
                 Start Over
-            </button>
+            </Button>
         </Link>
     </>
     )

@@ -12,11 +12,12 @@ function Feelings () {
 
     const dispatch = useDispatch();
 
+    //state variable with one star as default
     const [feelingsInput, setFeelingsInput] = useState(1);
 
     const onClickNext = (evt) => {
         
-        // send state to store
+        // send state to store via feelings reducer
         console.log('feelings input is:', feelingsInput)
         dispatch({
             type: 'FEELINGS',
@@ -28,12 +29,13 @@ function Feelings () {
     <>
     <Header />
     <Typography variant="h5">How are you feeling today?</Typography>
-
+    {/* contains stars proportionally */}
     <Box
     sx={{
         '& > legend': { mt: 2 },
     }}
     >
+    {/* star rating sets state to corresponding number */}
     <Rating
         name="simple-controlled"
         value={feelingsInput}
@@ -52,6 +54,6 @@ function Feelings () {
         </Link>
     </>
     )
-}
+};
 
 export default Feelings;

@@ -7,6 +7,7 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Confirmation from '../Confirmation/Confirmation';
+import Admin from '../Admin/Admin';
 import { CssBaseline } from '@mui/material';
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/confirmation" exact>
           <Confirmation />
+        </Route>
+        <Route path="/admin" exact>
+          <Admin />
         </Route>
       </Router>
     </div>
