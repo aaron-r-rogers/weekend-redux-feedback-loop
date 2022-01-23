@@ -13,6 +13,8 @@ const feelingsReducer = (state = '', action) => {
         case 'FEELINGS':
             console.log('feelingsReducer payload:', action.payload)
             return Number(action.payload);
+        case 'RESET':
+            return '';
     }
     return state;
 }
@@ -23,6 +25,8 @@ const understandingReducer = (state = '', action) => {
         case 'UNDERSTANDING':
             console.log('understandingReducer payload:', action.payload)
             return Number(action.payload);
+        case 'RESET':
+            return '';
     }
     return state;
 }
@@ -33,6 +37,8 @@ const supportReducer = (state = '', action) => {
         case 'SUPPORT':
             console.log('supportReducer payload:', action.payload)
             return Number(action.payload);
+        case 'RESET':
+            return '';
     }
     return state;
 }
@@ -43,6 +49,8 @@ const commentsReducer = (state = '', action) => {
         case 'COMMENTS':
             console.log('commentsReducer payload:', action.payload)
             return action.payload;
+        case 'RESET':
+            return '';
     }
     return state;
 }
