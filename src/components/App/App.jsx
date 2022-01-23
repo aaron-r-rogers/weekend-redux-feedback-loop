@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Feelings from '../Feelings/Feelings';
@@ -7,6 +6,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Confirmation from '../Confirmation/Confirmation';
 
 function App() {
 
@@ -27,6 +27,9 @@ function App() {
         </Route>
         <Route path="/review" exact>
           <Review />
+        </Route>
+        <Route path="/confirmation" exact>
+          <Confirmation />
         </Route>
       </Router>
     </div>

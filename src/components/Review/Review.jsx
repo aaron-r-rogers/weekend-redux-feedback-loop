@@ -1,11 +1,9 @@
 import Header from '../Header/Header';
-import { useSelector, useDispatch } from 'react-redux';
-import { HashRouter as Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 
 function Review () {
-
-    const dispatch = useDispatch();
 
     const feelings = useSelector(store => store.feelingsReducer)
     const understanding = useSelector(store => store.understandingReducer)
@@ -21,9 +19,6 @@ function Review () {
             comments: comments,
         }).then(res => {
             console.log('POST /feedback successful', res);
-            dispatch({
-                type: 'RESET'
-            })
         })
         .catch (err => {
             console.error('Error in POST /feedback', err)
