@@ -42,6 +42,11 @@ function Comments () {
                 NEXT: Review
             </button>
         </Link>
+        <Link to="/support">
+            <button>
+                BACK: Support
+            </button>
+        </Link>
     </>
     )
 }

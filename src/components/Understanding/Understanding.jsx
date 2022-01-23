@@ -8,7 +8,7 @@ function Understanding () {
 
     const dispatch = useDispatch();
 
-    const [understandingInput, setUnderstandingInput] = useState('');
+    const [understandingInput, setUnderstandingInput] = useState('1');
 
     const onClickNext = (evt) => {
         
@@ -36,6 +36,11 @@ function Understanding () {
         <Link to="/support">
             <button onClick={onClickNext}>
                 NEXT: Support
+            </button>
+        </Link>
+        <Link to="/">
+            <button>
+                BACK: Feelings
             </button>
         </Link>
     </>

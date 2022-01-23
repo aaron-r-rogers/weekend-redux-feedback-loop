@@ -7,10 +7,13 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Confirmation from '../Confirmation/Confirmation';
+import { CssBaseline } from '@mui/material';
 
 function App() {
 
   return (
+    <>
+    <CssBaseline />
     <div className='App'>
       <Router>
         <Route path="/" exact>
@@ -33,6 +36,7 @@ function App() {
         </Route>
       </Router>
     </div>
+    </>
   );
 }
 

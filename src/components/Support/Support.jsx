@@ -8,7 +8,7 @@ function Support () {
 
     const dispatch = useDispatch();
 
-    const [supportInput, setSupportInput] = useState('');
+    const [supportInput, setSupportInput] = useState('1');
 
     const onClickNext = (evt) => {
         
@@ -39,6 +39,11 @@ function Support () {
         <Link to="/comments">
             <button onClick={onClickNext}>
                 NEXT: Comments
+            </button>
+        </Link>
+        <Link to="/feelings">
+            <button>
+                BACK: Understanding
             </button>
         </Link>
     </>
