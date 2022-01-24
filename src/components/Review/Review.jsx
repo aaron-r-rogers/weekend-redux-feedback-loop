@@ -68,7 +68,7 @@ function Review () {
             </Button>
         </Link>
         <br></br>
-        <Link to="/comments" style={{ textDecoration: 'none' }}>
+        <Link to="/" style={{ textDecoration: 'none' }}>
             <Button 
             variant="contained" 
             color="warning"
