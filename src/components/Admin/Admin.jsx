@@ -1,7 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import Button from '@mui/material/Button';
 import Header from '../Header/Header';
 import * as React from 'react';
 import Table from '@mui/material/Table';
@@ -60,14 +58,6 @@ function Admin () {
     return(
         <>
         <Header />
-        {/* <ul>
-            {feedback.map(entry => (
-            <li key={entry.id}>
-                {entry.comments}
-            </li>
-        ))}
-        </ul> */}
-
     <TableContainer component={Paper}>
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -87,6 +77,8 @@ function Admin () {
                     <TableCell 
                         key={`${item.id}-${col.property}`}>
                             {item[col.property]}
+                            {/* insert button here as
+                            deleteForeverIcon from MUI */}
                     </TableCell>)}
             </TableRow>
             )}
