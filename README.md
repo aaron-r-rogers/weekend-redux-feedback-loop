@@ -2,42 +2,36 @@
 
 ## Description
 
-_Duration: 3 day sprint_
+_Duration: 2 day sprint_
 
-This is my first responsive app built with React.  It implements all four CRUD operations in a simple "Gallery of My Life."  There are a few photos laid out in a grid with like and delete buttons. There is also a form at the top to add more images.
-
-## Screenshot
-
-![App in use:](https://github.com/aaron-r-rogers/weekend-react-gallery/blob/master/wireframes/GalleryDemo.gif)
+This app is based off of the feedback used at Prime Digital Academy.  Each day, we provide feedback on how the day went.  This app replicates that by rating feeling, understanding, and support and providing comments.  In my app, the completed feedback gets sent to a database where it can be viewed from an admin page.
 
 ### Prerequisites
 
 - [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
 - Other dependencies can be viewed/installed via the accompanying package.json.
 
 ## Installation
 
-1. Create a database named `react_gallery`
-2. The queries in the `database.sql` file are set up to create all the tables and populate the data for the app to run properly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. Postico is recommended to run those queries as that was used to create the queries.
-3. Open up your editor of choice and run an `npm install`. (I use [Visual Studio Code](https://code.visualstudio.com/).)
+1. Create a database named `prime_feedback`
+2. The queries in the `data.sql` file are set up to create all the tables and populate the data for the app to run properly, including one example row. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. Postico is recommended to run those queries as that was used to create the queries.
+3. Open up your editor of choice and run an `npm install`. (I like [Visual Studio Code](https://code.visualstudio.com/).)
 4. Run `npm run server` in your terminal
-4. Run `npm run client` in your terminal. This will open a new tab in your browser at localhost:3000
-
-NOTE: The data in database.sql is based on relative URLs of my images.  You may use absolute URLs if you want to add your own images.
+4. Run `npm run client` in a new terminal. This will open a new tab in your browser at localhost:3000
 
 ## Usage
 
-1. To add an image, enter the title, description, and absolute url of the image.
-2. Then click the submmit button
-3. The image will be added to the database and appear below the input form.
-4. The images will maintain the order that they are added and use a grid presentation.
-5. The like button increments a count in the database and shows the user that value.
-6. The delete button deletes the corresponding image.
-7. Clicking on the image reveals the description of the image, and clicking the descriptions returns to the image.
+1. On the first page, the user rates how they are feeling about the day's content using a five star system.
+2. Clicking next goes to the understanding page where the same rating system is presented.  There is also now a back button which would return to the previous section.
+3. Step three repeats with the next page, suppport.
+4. The last page is a review page where all of the information entered is displayed.  The user may either submit, go back, or start over.  Submit posts to the database.
+5. After submission, you get a confirmation page with a button returning you to the beginning.
+6. The /admin page is not a part of the user navigation but presents a table with all of the data in the database.
 
 ## Built With
 
-React, with help from Material-UI and PostgreSQL.
+React and Redux, with help from Material-UI and PostgreSQL.
 
 ## Acknowledgement
 Thanks to [Prime Digital Academy](www.primeacademy.io), especially Edan and the Woodall Cohort, who equipped and helped me to make this application a reality.
