@@ -6,6 +6,10 @@ _Duration: 2 day sprint_
 
 This app is based off of the feedback used at Prime Digital Academy.  Each day, we provide feedback on how the day went.  This app replicates that by rating feeling, understanding, and support and providing comments.  In my app, the completed feedback gets sent to a database where it can be viewed from an admin page.
 
+## Demo
+
+![FeedbackAppDemo](https://user-images.githubusercontent.com/87159469/156093187-3f9c4dfb-c875-4b1a-b1a5-bf863335deed.gif)
+
 ### Prerequisites
 
 - [React](https://reactjs.org/)
